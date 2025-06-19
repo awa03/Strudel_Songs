@@ -1,0 +1,9 @@
+const _bank = "tr909"
+setCps(140/60/4)
+//$: note("<[g3 b3 b8 [g4 f#4 b4 b4]]>/2").sound("gm_overdriven_guitar")
+
+$: sound("< [ hh!8 ] - >").gain(.2).sometimesBy(.1, x => x.ply("2 | 4 | 8"))
+$: sound("bd").beat("0", 16).bank(_bank)
+$: sound("sd").beat("4, 5", 8).bank(_bank)
+$: note("< - [g3 b3 b8 [g4 f#4 b4 b4]]>").sound("gm_overdriven_guitar").rarely(x=>x.speed("0.5"))
+$: note("<[f#4 b4 b4 f#4 b4 f#4 g4 f#4] ->").sound("gm_overdriven_guitar").fm(4).fmh("<1>")._scope()
