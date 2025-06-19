@@ -1,0 +1,18 @@
+const bank = "tr909";
+setCps(140/60/4)
+$: s("hh!2").gain(.2)
+$: s(`lt(<5, 7, 9>, 16)`).bank(bank).gain(0.1)
+$: s("[hh]*4").bank("dr550").gain(0.8).delay(0.1)
+$: s("bd").struct("{0 0 0 1 0 0 0 1}%8").bank("dr550").gain(0.8).delay(0.1)
+$: note("f#4 b4 b4 f#4 b4 f#4 g4 f#4").sound("gm_overdriven_guitar").lpf(1000)
+$: note("g4 f#4 b4 b4 f#4")
+.sound("sawtooth")
+.lpf(100)
+.lpr(0.3)
+.gain(0.7)
+.size(0.1)
+.delay(0.3)
+.delaytime(0.125)
+.delayfeedback(0.4)
+.slow(2) 
+
