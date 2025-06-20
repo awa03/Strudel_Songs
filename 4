@@ -1,0 +1,15 @@
+const bank = "rolandtr505";
+const bars = [
+  "{d4 bb3 eb3 d3 bb2 eb2}%16",
+  "{c4 bb3 f3 c3 bb2}%16", 
+  "{c4 bb3 c3 bb2 f2}%16",
+  "{a3 c4 d3 bb3 eb3 d4}%16", 
+  "{d4 eb3 bb3 f3 bb3 eb2}%16",
+]
+
+//$: note("<1 1 2 2 3>".pick(bars)).sound("supersaw").delay(0.2).decay("0.1").room(2).sustain(0.2).release("<0 0.1 0.05>").gain(0.1)
+$: note("<1 0 2 0 3 4>".pick(bars)).sound(wchoose(["sawtooth", 90], ["supersaw", 5], ["z_sawtooth", 5])).cutoff(sine.range(5000,6000)).delay(0.2).decay("0.1").room(2).sustain(0.2).release("<0 0.1 0.05>")
+
+//$: s("hh!16").gain(.2)
+//$: s(`bd(<1, 5, 8, 14>, 16)`).bank(bank).lpf(700).gain(.4)
+//$: note("{a3 c4 d3 bb3 eb3 d4 c4 bb3 f3 c3 bb2}%16").sound("gm_acoustic_guitar_nylon")
