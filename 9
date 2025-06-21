@@ -1,0 +1,15 @@
+setCps(140/60/8)
+const notes = [
+  "{76 - 74 - 72 - [70  74]*2 76}%8",
+  "-",
+  "{74 - 76 74 [76]*2 76}%8",
+]
+
+$: sound("bd").struct("1(5, 8)").bank("tr909").lpf(1000)
+$: sound("cp").struct("1(4, 8)").bank("tr909").lpf(1000)
+$: "{<5 4>}".scale('d5 minor').note().struct("1(3, 8)").sound("gm_pan_flute").delay(0.3).gain(0.6).lpf(400)
+$: "{<5 4>}".scale('d4 minor').note().struct("1(3, 8)").sound("gm_pan_flute").delay(0.3)
+$: "{<2 3>}".scale('d5 minor').note().struct("1(5, 8)").sound("gm_pan_flute").delay(0.3).gain(0.6).lpf(400)
+$: "{<5 4>}".scale('cb3').note().struct("1(3, 8)").sound("gm_pan_flute").delay(0.3)
+$: note("<0 2 1 2 2 >".pick(notes)).sound("sawtooth").gain(0.3).lpf(900)
+
