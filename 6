@@ -1,0 +1,15 @@
+const _bank = "tr909"
+const _notes = [
+  "{73 76 73 68 73 78 66}%8",        
+  "{68 73 76 73 68 75 73}%8",        
+  "{73 [68 73] 76 [73 68] 75}%8",    
+  "{76 73 68 ~ 73 76 68 75}%8"       
+]
+
+//$: note("<1 0 1 0 0>".pick(_notes)).sound("gm_flute").gain(0.7)
+
+$: sound("[cp]!2").struct("{1 0 1 1 0 1 0 1}%8").room(1).lpf(300).bank(_bank)
+$: sound("[hh]!2").struct("{1 0 1 1 0 1 1 1}%8").room(1).lpf(300).bank(_bank)
+$: sound("[cp]!2").struct("{0 1 0 1 1 0 1}%8").room(1).gain(0.4).lpf(900).bank(_bank)
+$: sound("[bd]!2").struct("{1 0 1 0 1 1 0}%8").room(1).gain(0.4).lpf(900).bank(_bank)
+$: note("<1 2 3 0 2>".pick(_notes)).sound("gm_flute").gain(0.7)
