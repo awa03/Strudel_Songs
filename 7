@@ -1,0 +1,14 @@
+const _bank = "tr909"
+const _notes = [
+  "{65 - 63 - [66 63] 63 66 63}%16", 
+  "{66 66 - [72 68]*2}%16", 
+  "{62 - 68 - [66 -] 69 63 61}%16", 
+  "{65 - 62 - [- 61 68] 65 64 63}%16"
+]
+// i dont like this song really...
+$: sound("bd!4").bank(_bank)
+$: sound("lt!4").struct("{1 0 1 0 0 1}%16").bank(_bank).gain(0.5)
+//$: note("65 - 63 - [66 63] 63 66 63").sound("gm_fx_brightness")
+//$: note("<0 1 2 3 0 2 1>".pick(_notes)).sound("gm_fx_brightness").room(1.2).gain(0.3)
+$: note("<0 1 2 3 0 2 1>".pick(_notes)).sound("gm_electric_guitar_clean")
+//$: s(`cp(<11, 13>, 16)`).bank(_bank).gain(0.2).delay(0.1)
