@@ -1,0 +1,18 @@
+const _bank = "tr909"
+const _notes = [
+  "{73 76 73 68 73 78 66}%8",
+  "{69 73 76 73 68 73 76}%8"
+]
+const _notes2 = [
+  "{83 86 83 78 73 78 76}%16",
+  "{79 73 86 73 88 83 76}%16",
+  "{79 73 76 73 78 73 76}%16"
+]
+
+$: sound("cp!2").delay(0).hpf(2000).decay(0.1).bank(_bank)
+$: sound("sd").struct("{0 1 1 0 1 0 1}%4").hpf(1000).bank(_bank)
+$: sound("bd").struct("{0 1 0 1 0 1 1}%8").lpf(800).bank(_bank)
+$: note("69").sound("gm_synth_bass_2").struct("<{1 0 0 1 0 1}%16 {1 0 1 0 0 1}%16>").lpf(800).room(2).decay(2)
+//$: note("73").sound("piano").struct("<{1 0 0 1 0 1 0 1 0 1 1}%16>").lpf(1000).room(2).decay(2)
+$: note("<0 1>".pick(_notes)).sound("piano").lpf(1000).room(2).decay(2)
+//$: note("<2 0 1 1 0 1 0 1 2>".pick(_notes2)).sound("gm_piano").lpf(900).room(1).decay(2)
