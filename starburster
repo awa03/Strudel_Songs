@@ -1,10 +1,11 @@
-// work in progress
-
 const notes = [
-  "{a [f#4, a4] - }%4",
-  "{bd - [d#4, f5]}%4",
+  "{a [d4, f#4, a3]}%4",
+  "{bb [d4, f4, a4]}%4",
+  "{d5 f#5 a5 d6}%4",
+  "{d6 - - -}%4"
+
 ]
-$: note("<0 0 1>".pick(notes)).delay(0.3)
-   .sound("gm_fx_soundtrack")
-   .room(1.5)
-   .gain(0.7)
+
+//$: sound("{hh!4 mt ht -, bd}").bank("tr909")
+$: note("<0 0 1 1>".pick(notes)).sound("gm_fx_soundtrack").room(1)
+$: note("<2 3>".pick(notes)).sound("piano")
