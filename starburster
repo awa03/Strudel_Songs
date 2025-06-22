@@ -1,0 +1,10 @@
+// work in progress
+
+const notes = [
+  "{a [f#4, a4] - }%4",
+  "{bd - [d#4, f5]}%4",
+]
+$: note("<0 0 1>".pick(notes)).delay(0.3)
+   .sound("gm_fx_soundtrack")
+   .room(1.5)
+   .gain(0.7)
